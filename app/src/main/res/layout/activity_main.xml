@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.simpleview.viewmodel.MainActivityViewModel" />
+
+        <variable
+            name="vmview"
+            type="com.example.simpleview.viewmodel.DimpleViewModel" />
+
+        <variable
+            name="click"
+            type="com.example.simpleview.MainActivity.ClickProxy" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <com.example.simpleview.simpleview.DimpleView
+            android:id="@+id/dimpleView"
+            isdimple="@{vmview.sendDimple.booleanValue()}"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            image_animation="@{true}"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:background="@drawable/radio"
+            android:onClick="@{() -> click.dimpleClick()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

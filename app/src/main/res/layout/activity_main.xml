@@ -17,13 +17,17 @@
         <variable
             name="click"
             type="com.example.simpleview.MainActivity.ClickProxy" />
+
+        <variable
+            name="imageUrl"
+            type="Integer" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        blur_back="@{vm.backDrawableId.intValue()}"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black">
+        android:layout_height="match_parent">
 
         <com.example.simpleview.simpleview.DimpleView
             android:id="@+id/dimpleView"
@@ -37,9 +41,9 @@
 
         <ImageView
             image_animation="@{true}"
-            android:layout_width="320dp"
-            android:layout_height="320dp"
-            android:background="@drawable/radio"
+            image_circle="@{vm.backDrawableId.intValue()}"
+            android:layout_width="199.5dp"
+            android:layout_height="199.5dp"
             android:onClick="@{() -> click.dimpleClick()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

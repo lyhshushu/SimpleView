@@ -6,8 +6,6 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
-import androidx.lifecycle.LifecycleObserver
-import com.example.simpleview.viewmodel.DimpleViewModel
 import java.util.*
 import kotlin.math.acos
 import kotlin.math.cos
@@ -104,7 +102,7 @@ class DimpleView(context: Context, attrs: AttributeSet) : View(context, attrs) {
             speed = random.nextInt(2) + 2f
             angel = acos(((pos[0] - centerX) / 280f).toDouble())
             offset = random.nextInt(200)
-            maxOffset = random.nextInt(300)
+            maxOffset = offset + random.nextInt(100)
 
             particleList.add(
                 Particle(

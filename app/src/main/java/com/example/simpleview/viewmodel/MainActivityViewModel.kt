@@ -1,12 +1,8 @@
 package com.example.simpleview.viewmodel
 
-import android.graphics.drawable.Drawable
-import androidx.databinding.ObservableBoolean
-import androidx.databinding.ObservableField
-import androidx.databinding.ObservableInt
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.simpleview.R
-import com.kunminx.architecture.ui.callback.UnPeekLiveData
 
 /**
  * Project Name: SimpleView
@@ -22,9 +18,9 @@ import com.kunminx.architecture.ui.callback.UnPeekLiveData
  */
 class MainActivityViewModel : ViewModel() {
 
-    var backDrawableId = UnPeekLiveData<Int>()
+    var backDrawableId = MutableLiveData<Int>()
 
     init {
-        this.backDrawableId.value = R.drawable.zhou
+        backDrawableId.value = R.drawable.zhou
     }
 }

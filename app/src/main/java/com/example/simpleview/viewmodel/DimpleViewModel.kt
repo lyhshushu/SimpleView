@@ -1,8 +1,7 @@
 package com.example.simpleview.viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.kunminx.architecture.ui.callback.UnPeekLiveData
-
 /**
  * Project Name: SimpleView
  * File Name:    DimpleViewModel.java
@@ -17,7 +16,7 @@ import com.kunminx.architecture.ui.callback.UnPeekLiveData
  */
 class DimpleViewModel() : ViewModel() {
 
-    var sendDimple = UnPeekLiveData<Boolean>()
+    var sendDimple = MutableLiveData<Boolean>()
 
 
 }
